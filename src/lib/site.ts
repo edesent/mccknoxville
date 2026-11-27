@@ -168,7 +168,7 @@ export const weekly = [
     title: "A Place at the Table",
     mode: "In person" as Mode,
     where: "Downtown Knoxville",
-    blurb: "Volunteers serve 200+ hot meals to neighbors on the margins.",
+    blurb: "Volunteers serve 100+ hot meals to neighbors on the margins.",
     href: links.placeAtTheTable,
   },
   {
