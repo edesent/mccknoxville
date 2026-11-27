@@ -345,7 +345,10 @@ export const ministries = [
 /* Watch                                                               */
 /* ------------------------------------------------------------------ */
 
-/** Recent services from the YouTube channel's Live tab. Newest first. */
+/**
+ * Back catalogue of services. New uploads are added automatically from the
+ * YouTube channel (see messages.ts); this list fills in behind them.
+ */
 export const sermons = [
   { id: "WuJydX7vWIE", title: "Love One Another: Replacing “Othering” with “Neighboring”", date: "Oct 4, 2026" },
   { id: "aBkjrmzyN9U", title: "Lead Me to the Rock", date: "Sept 27, 2026" },

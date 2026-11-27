@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import { LiveBadge } from "@/components/Sunday";
-import { links, queerFacesOfFaith, sermons } from "@/lib/site";
+import { getMessages } from "@/lib/messages";
+import { links, queerFacesOfFaith } from "@/lib/site";
+
+// Re-checked hourly so a new Sunday upload appears by itself.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Watch",
@@ -11,8 +15,8 @@ export const metadata: Metadata = {
 
 const yt = (id: string) => `https://www.youtube.com/watch?v=${id}`;
 
-export default function WatchPage() {
-  const [latest, ...rest] = sermons;
+export default async function WatchPage() {
+  const [latest, ...rest] = (await getMessages()).slice(0, 19);
   return (
     <>
       <PageHead
@@ -77,7 +81,7 @@ export default function WatchPage() {
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <p className="mt-3 text-sm font-semibold text-muted">{s.date ?? ("series" in s ? `${s.series} series` : "Sunday service")}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">{s.date ?? (s.series ? `${s.series} series` : "Sunday service")}</p>
                   <h3 className="text-lg font-extrabold leading-snug group-hover:text-flame">{s.title}</h3>
                 </a>
               </li>
