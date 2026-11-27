@@ -4,7 +4,7 @@
  */
 
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://mccknoxville.dfd.llc";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.mccknoxville.org";
 
 /**
  * While the site lives on a preview address it asks search engines to stay

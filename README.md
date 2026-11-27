@@ -6,7 +6,7 @@ Sunday worship 11:00 AM Eastern, onsite and on Zoom, Facebook Live, YouTube Live
 Next.js **16.2.1** (App Router) · React 19 · Tailwind CSS **v4** · deployed on
 Vercel, which rebuilds automatically on every push to `main`.
 
-Preview: https://mccknoxville.dfd.llc (hidden from search engines).
+Live: https://www.mccknoxville.org
 Their current site: https://www.mccknoxville.org (Joomla, 2013 Artisteer template).
 
 ## The idea
