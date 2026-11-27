@@ -292,7 +292,7 @@ export const ministries = [
     id: "table",
     name: "A Place at the Table",
     kicker: "Every Monday night since 2015",
-    body: "What began as a ministry of MCC Knoxville is now its own 501(c)(3). Each Monday our volunteers serve more than 200 hot meals downtown, along with toiletries, clothing and other necessities, to neighbors who are homeless, between jobs, or working and still can’t make rent. The goal is a full stomach and a little dignity, too.",
+    body: "What began as a ministry of MCC Knoxville is now its own 501(c)(3). Each Monday our volunteers serve more than 100 hot meals downtown, along with toiletries, clothing and other necessities, to neighbors who are homeless, between jobs, or working and still can’t make rent. The goal is a full stomach and a little dignity, too.",
     how: "Cook, serve, sort donated clothing, or give toiletries.",
     href: links.placeAtTheTable,
     hrefLabel: "apattknox.com",
