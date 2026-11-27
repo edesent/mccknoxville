@@ -229,7 +229,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
-                <p className="display text-[clamp(4rem,9vw,7rem)] text-r3">200+</p>
+                <p className="display text-[clamp(4rem,9vw,7rem)] text-r3">100+</p>
                 <p className="mt-1 text-2xl font-extrabold">hot meals, every Monday night</p>
                 <p className="mt-2 max-w-lg text-white/80">
                   A Place at the Table began here in 2015 and now feeds downtown Knoxville as its own nonprofit.
