@@ -96,8 +96,8 @@ export const ways = [
     id: "youtube",
     name: "On YouTube Live",
     short: "YouTube",
-    how: "Same service, same time, on our YouTube channel, with replays posted Sunday afternoon. Hit Subscribe and YouTube will tell you when we’re live.",
-    cta: { label: "Open YouTube Live", href: links.youtubeLive },
+    how: "Same service, same time, streamed from our YouTube channel right onto this site, with replays posted Sunday afternoon. Hit Subscribe and YouTube will tell you when we’re live.",
+    cta: { label: "Watch here", href: "/watch#player" },
   },
   {
     id: "phone",
@@ -107,6 +107,14 @@ export const ways = [
     cta: { label: "Ask the office", href: "/contact" },
   },
 ] as const;
+
+/** Who to write to. Addresses are base64'd and put together in the browser (see ObfEmail). */
+export const officeEmailB64 = "T2ZmaWNlQG1jY2tub3h2aWxsZS5vcmc=";
+export const contacts = [
+  { name: "Rev. Colleen Darraugh", role: "Lead Pastor", note: "Office hours by appointment", emailB64: "UGFzdG9yQG1jY2tub3h2aWxsZS5vcmc=" },
+  { name: "Rev. Marie Alford-Harkey", role: "Digital Pastor", emailB64: "RGlnaXRhbFBhc3RvckBtY2Nrbm94dmlsbGUub3Jn" },
+  { name: "Rev. Bodhi Kahlil Der Parunakian", role: "Pastoral Care Lead", emailB64: "UGFzdG9yYWxDYXJlQG1jY2tub3h2aWxsZS5vcmc=" },
+];
 
 export const staff = [
   {

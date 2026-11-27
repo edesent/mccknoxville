@@ -28,3 +28,15 @@ export function Obf({
     </a>
   );
 }
+
+/** An email address, kept out of the page source the same way. */
+export function ObfEmail({ b64, className = "" }: { b64: string; className?: string }) {
+  const [addr, setAddr] = useState<string | null>(null);
+  useEffect(() => setAddr(atob(b64)), [b64]);
+  if (!addr) return <span className={className}>Email</span>;
+  return (
+    <a href={`mailto:${addr}`} className={className}>
+      {addr}
+    </a>
+  );
+}

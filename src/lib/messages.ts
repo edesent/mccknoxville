@@ -1,3 +1,4 @@
+import { CHANNEL_ID } from "./live";
 import { sermons } from "./site";
 
 /**
@@ -7,7 +8,6 @@ import { sermons } from "./site";
  * page shows if YouTube can't be reached.
  */
 
-const CHANNEL_ID = "UCxFCg3GVxmEgcRD4lai-mnQ";
 const FEED = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/Forms";
-import { Obf } from "@/components/Obf";
+import { Obf, ObfEmail } from "@/components/Obf";
 import PageHead from "@/components/PageHead";
-import { links, mapsUrl, org } from "@/lib/site";
+import { contacts, links, mapsUrl, officeEmailB64, org } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -50,6 +50,59 @@ export default function ContactPage() {
               </ul>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="bg-mist py-20 sm:py-28">
+        <div className="wrap">
+          <h2 className="display text-[clamp(2.2rem,5vw,3.8rem)]" data-reveal>Contact us</h2>
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+            <dl className="grid content-start gap-8" data-reveal>
+              <div>
+                <dt className="kicker text-muted">Office hours</dt>
+                <dd className="mt-2 text-lg text-ink/80">
+                  Our office is currently staffed by volunteers, but there is no set schedule. Please call or email
+                  the office if you need to meet with someone.
+                </dd>
+              </div>
+              <div>
+                <dt className="kicker text-muted">Address</dt>
+                <dd className="mt-2 text-lg">
+                  <a href={mapsUrl} className="hover:text-flame">
+                    <span className="font-bold">{org.long}</span>
+                    <br />
+                    {org.street}
+                    <br />
+                    {org.city}, {org.stateCode} {org.zip}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="kicker text-muted">Office</dt>
+                <dd className="mt-2 grid gap-1 text-lg">
+                  <span>
+                    Phone: <Obf b64={org.phoneB64} className="font-bold hover:text-flame" />
+                  </span>
+                  <span>
+                    Email: <ObfEmail b64={officeEmailB64} className="break-all font-bold hover:text-flame" />
+                  </span>
+                </dd>
+              </div>
+            </dl>
+
+            <ul className="grid content-start gap-4" data-reveal style={{ ["--d" as string]: "120ms" }}>
+              {contacts.map((c) => (
+                <li key={c.name} className="rounded-[1.5rem] bg-white p-6 sm:p-7">
+                  <p className="text-xl font-extrabold leading-snug">{c.name}</p>
+                  <p className="kicker mt-1 text-muted">{c.role}</p>
+                  {c.note && <p className="mt-3 text-ink/75">{c.note}</p>}
+                  <p className="mt-3">
+                    <ObfEmail b64={c.emailB64} className="break-all font-bold text-flame hover:underline" />
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </>

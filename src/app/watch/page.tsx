@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import WatchPlayer from "@/components/WatchPlayer";
 import PageHead from "@/components/PageHead";
 import { LiveBadge } from "@/components/Sunday";
 import { getMessages } from "@/lib/messages";
@@ -22,12 +23,12 @@ export default async function WatchPage() {
       <PageHead
         kicker="Watch & listen"
         title="Church, wherever you are."
-        lede="Every Sunday at 11 Eastern we’re live on YouTube, Facebook and Zoom. Full services and highlights go up on YouTube Sunday afternoon."
+        lede="Every Sunday at 11 Eastern we’re live right here, and on Facebook and Zoom. Full services and highlights go up on YouTube Sunday afternoon."
       >
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <LiveBadge />
-          <a href={links.youtubeLive} className="btn btn-ember" target="_blank" rel="noopener">
-            YouTube Live
+          <a href="#player" className="btn btn-ember">
+            Watch here
           </a>
           <a href={links.facebookLive} className="btn btn-ghost" target="_blank" rel="noopener">
             Facebook Live
@@ -40,32 +41,7 @@ export default async function WatchPage() {
 
       <section className="py-20 sm:py-28">
         <div className="wrap">
-          <a
-            href={yt(latest.id)}
-            target="_blank"
-            rel="noopener"
-            className="group grid overflow-hidden rounded-[2rem] bg-night text-white lg:grid-cols-[1.4fr_1fr]"
-            data-reveal
-          >
-            <div className="relative aspect-video overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`https://i.ytimg.com/vi/${latest.id}/maxresdefault.jpg`}
-                alt=""
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-              />
-              <span className="absolute inset-0 grid place-items-center">
-                <span className="grid h-20 w-20 place-items-center rounded-full bg-ember shadow-2xl transition group-hover:scale-110">
-                  <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="#fff"><path d="M8 5v14l11-7z" /></svg>
-                </span>
-              </span>
-            </div>
-            <div className="flex flex-col justify-center p-8 sm:p-10">
-              <p className="kicker text-r3">Latest · {latest.date}</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">{latest.title}</h2>
-              <p className="mt-4 text-white/70">The full Sunday service from MCC Knoxville.</p>
-            </div>
-          </a>
+          <WatchPlayer latest={latest} />
 
           <h2 className="display mt-20 text-[clamp(2rem,4.5vw,3.4rem)]" data-reveal>Recent messages</h2>
           <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
