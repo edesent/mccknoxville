@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="rainbow-rule" />
       <div className="wrap grid gap-12 py-16 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
-          <Wordmark />
+          <Wordmark size="lg" />
           <p className="mt-5 max-w-xs text-white/70">
             A Christian church for the LGBTQ+ and straight communities of Knoxville and East Tennessee.
             Come as you are.

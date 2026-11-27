@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import EventList from "@/components/EventList";
-import Gateposts from "@/components/Gateposts";
+import MapCard from "@/components/MapCard";
 import Ridges from "@/components/Ridges";
 import { LiveBadge, WaysToJoin } from "@/components/Sunday";
 import { links, mapsUrl, ministries, org, purpose, staff, upcoming, weekly } from "@/lib/site";
@@ -328,7 +328,7 @@ export default function Home() {
             </div>
           </div>
           <div data-reveal style={{ ["--d" as string]: "120ms" }}>
-            <Gateposts />
+            <MapCard />
           </div>
         </div>
       </section>

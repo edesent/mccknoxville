@@ -19,20 +19,33 @@ export default function GivePage() {
       />
 
       <section className="py-20 sm:py-28">
-        <div className="wrap grid gap-6 lg:grid-cols-[1.25fr_1fr]">
-          <div className="relative overflow-hidden rounded-[2rem] bg-night p-8 text-white sm:p-12" data-reveal>
+        <div className="wrap grid gap-6 items-start lg:grid-cols-[1.35fr_1fr]">
+          <div className="relative overflow-hidden rounded-[2rem] bg-night text-white" data-reveal>
             <div aria-hidden="true" className="rainbow-rule absolute inset-x-0 top-0" />
-            <p className="kicker text-r3">The easiest way</p>
-            <h2 className="display mt-4 text-[clamp(2.4rem,5vw,4rem)]">Give online</h2>
-            <p className="mt-5 max-w-md text-lg text-white/80">
-              One time or recurring, to the General Fund or another fund. The first time, you’ll set up a quick account.
-            </p>
-            <a href={links.give} target="_blank" rel="noopener" className="btn btn-ember mt-8 text-lg">
-              Give securely online <span aria-hidden="true">→</span>
-            </a>
-            <p className="mt-10 rounded-2xl bg-white/[0.07] p-5 text-white/80">
-              <span className="font-bold text-white">Give weekly or monthly?</span> Set up a recurring gift once and
-              it’s done. Recurring gifts are a real help to the church’s cash flow.
+            <div className="p-8 pb-6 sm:p-12 sm:pb-8">
+              <p className="kicker text-r3">The easiest way</p>
+              <h2 className="display mt-4 text-[clamp(2.4rem,5vw,4rem)]">Give online</h2>
+              <p className="mt-5 max-w-md text-lg text-white/80">
+                One time or recurring, to the General Fund or another fund. Set up a weekly or monthly gift once and
+                it’s done.
+              </p>
+            </div>
+            {/* The church's own Breeze giving form, shown in place. */}
+            <div className="mx-3 overflow-hidden rounded-[1.4rem] bg-white sm:mx-6">
+              <iframe
+                src={links.give}
+                title="Give online to MCC Knoxville"
+                loading="lazy"
+                allow="payment"
+                className="block h-[980px] w-full border-0"
+              />
+            </div>
+            <p className="p-8 pt-5 text-sm text-white/70 sm:px-12">
+              Form not loading?{" "}
+              <a href={links.give} target="_blank" rel="noopener" className="font-bold text-white underline underline-offset-4">
+                Open the giving form in its own window
+              </a>
+              .
             </p>
           </div>
 

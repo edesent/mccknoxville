@@ -32,13 +32,18 @@ export function Flame({ className = "", tone = "light" }: { className?: string; 
   );
 }
 
-export function Wordmark({ tone = "light" }: { tone?: "light" | "dark" }) {
+export function Wordmark({ tone = "light", size = "md" }: { tone?: "light" | "dark"; size?: "md" | "lg" }) {
+  const lg = size === "lg";
   return (
-    <span className="flex items-center gap-2.5">
-      <Flame className="h-10 w-10 shrink-0" tone={tone} />
+    <span className={`flex items-center ${lg ? "gap-4" : "gap-2.5"}`}>
+      <Flame className={`${lg ? "h-20 w-20" : "h-10 w-10"} shrink-0`} tone={tone} />
       <span className="leading-none">
-        <span className="block font-serif text-[1.65rem] font-semibold tracking-[0.04em]">MCC</span>
-        <span className="mt-0.5 block text-[0.66rem] font-bold uppercase tracking-[0.24em] opacity-80">
+        <span className={`block font-serif font-semibold tracking-[0.04em] ${lg ? "text-[3.2rem]" : "text-[1.65rem]"}`}>
+          MCC
+        </span>
+        <span
+          className={`block font-bold uppercase tracking-[0.24em] opacity-80 ${lg ? "mt-1.5 text-[1.05rem]" : "mt-0.5 text-[0.66rem]"}`}
+        >
           Knoxville
         </span>
       </span>

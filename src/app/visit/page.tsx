@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Gateposts from "@/components/Gateposts";
+import MapCard from "@/components/MapCard";
 import { VisitForm } from "@/components/Forms";
 import PageHead from "@/components/PageHead";
 import { WaysToJoin } from "@/components/Sunday";
@@ -144,7 +144,7 @@ export default function VisitPage() {
             </a>
           </div>
           <div className="lg:pt-16" data-reveal style={{ ["--d" as string]: "120ms" }}>
-            <Gateposts />
+            <MapCard />
           </div>
         </div>
       </section>
