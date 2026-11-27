@@ -38,7 +38,7 @@ export default function Home() {
             style={{ ["--d" as string]: "240ms" }}
           >
             A wellspring of acceptance, hope and reconciliation for the LGBTQ+ and straight communities of
-            Knoxville and East Tennessee.
+            Knoxville, East Tennessee, and beyond.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3" data-reveal style={{ ["--d" as string]: "360ms" }}>
             <Link href="/visit" className="btn btn-ember text-lg">
