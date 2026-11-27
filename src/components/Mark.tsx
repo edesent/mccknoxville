@@ -36,7 +36,13 @@ export function Wordmark({ tone = "light", size = "md" }: { tone?: "light" | "da
   const lg = size === "lg";
   return (
     <span className={`flex items-center ${lg ? "gap-4" : "gap-2.5"}`}>
-      <Flame className={`${lg ? "h-20 w-20" : "h-10 w-10"} shrink-0`} tone={tone} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/mcc-flame-w-shadow.png"
+        alt=""
+        aria-hidden="true"
+        className={`${lg ? "h-20 w-20" : "h-10 w-10"} shrink-0 object-contain`}
+      />
       <span className="leading-none">
         <span className={`block font-serif font-semibold tracking-[0.04em] ${lg ? "text-[3.2rem]" : "text-[1.65rem]"}`}>
           MCC
