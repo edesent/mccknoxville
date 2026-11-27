@@ -84,7 +84,7 @@ export default function WatchPlayer({ latest }: { latest: Message }) {
             <p className="kicker text-r3">Latest{latest.date ? ` · ${latest.date}` : ""}</p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">{latest.title}</h2>
             <p className="mt-4 text-white/70">
-              The full Sunday service from MCC Knoxville. When we go live on Sunday at 11, the stream appears right here.
+              The full Sunday service from MCC Knoxville. When we go live on Sunday at 11, the stream appears right here. On YouTube, check the Playlists for the full service or just the Word and Message.
             </p>
           </>
         )}
