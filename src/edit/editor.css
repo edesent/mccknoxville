@@ -1,0 +1,16 @@
+/* Loaded only with the editor (/edit). Amber reads on both the white sections and the navy ones. */
+
+html[data-editor] body { padding-bottom: 112px; }
+
+html[data-editing] [data-txt] { cursor: text; }
+html[data-editing] [data-txt-hover] {
+  outline: 2px solid #d99a00;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+html[data-editing] [data-txt-changed] {
+  outline: 2px solid #d99a00;
+  outline-offset: 3px;
+  border-radius: 2px;
+  background: rgba(217, 154, 0, 0.18);
+}

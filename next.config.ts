@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  // /edit is the home page with the editor on; keep it out of search.
+  async headers() {
+    return [{ source: "/edit", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }];
+  },
 };
 
 export default nextConfig;

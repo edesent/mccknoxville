@@ -31,7 +31,7 @@ export default function EventList({ items, detail = false }: { items: Dated[]; d
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2 text-sm">
                   <span className="font-bold">{e.time}</span>
-                  <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${modeTint[e.mode]}`}>{e.mode}</span>
+                  {e.mode && <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${modeTint[e.mode]}`}>{e.mode}</span>}
                 </div>
                 <h3 className="mt-1.5 text-xl font-extrabold leading-snug tracking-tight sm:text-2xl">{e.title}</h3>
                 <p className="mt-1 text-sm text-muted">{e.where}</p>

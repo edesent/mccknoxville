@@ -1,3 +1,6 @@
+import eventList from "@/content/events.json";
+import type { ChurchEvent } from "./events";
+
 /**
  * Everything the church might want to change lives in this file. Pages read
  * from here, so an edit here updates the whole site.
@@ -219,44 +222,19 @@ export const monthly = [
 ];
 
 /**
- * One-off events. Each has an `endsOn` date (YYYY-MM-DD); the day after, it
- * drops off the site by itself.
+ * One-off events live in src/content/events.json, where the editor at /edit
+ * adds, changes and removes them. The day after an event's last day, it drops
+ * off the site by itself.
  */
-export const events = [
-  {
-    date: "2026-10-23",
-    endsOn: "2026-10-23",
-    time: "6:30 PM",
-    title: "Friday Night Game Night: Halloween Trivia with Lovinia",
-    mode: "In person & online" as Mode,
-    where: "MCC Knoxville & Zoom",
-    blurb:
-      "Back by popular demand, our own Lovinia Hart is your Mistress of Ceremonies. There’ll be door prizes, storytelling and maybe even a little show. Free, all welcome, bring a snack if you like. We’re also collecting canned hams, cranberry sauce and canned yams for the Food Pantry’s holiday baskets.",
-    href: "https://us02web.zoom.us/j/82533939549?pwd=SwqrT5xHR31xgjfLo7cjyYkyNPWrbJ.1",
-  },
-  {
-    date: "2026-11-08",
-    endsOn: "2026-11-08",
-    time: "12:20 PM",
-    title: "Fall Congregational Forum",
-    mode: "In person & online" as Mode,
-    where: "After worship, onsite & on the worship Zoom",
-    blurb:
-      "An informal time to ask questions before the Congregational Meeting. We’ll discuss the 2027 operating budget and update our 2014 Electronic Media Policy. Reports are posted on the Documents page by Friday, October 30.",
-    href: "/documents",
-  },
-  {
-    date: "2026-11-15",
-    endsOn: "2026-11-15",
-    time: "12:20 PM",
-    title: "Fall Congregational Meeting",
-    mode: "In person & online" as Mode,
-    where: "After worship, onsite & Zoom",
-    blurb:
-      "Approval of the 2027 operating budget and reports from the Pastor, Board, Treasurer, Lay Delegate and Food Pantry. Everyone welcome; members have voice and vote.",
-    href: "https://us02web.zoom.us/j/83986162593?pwd=Vzd3a2FDWXBvSG83V25xa1dYOGp5QT09",
-  },
-];
+export const events: (Dated & { endsOn: string })[] = (eventList as ChurchEvent[]).map((e) => ({
+  date: e.start,
+  endsOn: e.end ?? e.start,
+  time: e.time ?? "",
+  title: e.title,
+  where: e.where ?? "MCC Knoxville",
+  blurb: e.description,
+  href: e.link,
+}));
 
 /** Today's date in Knoxville, as YYYY-MM-DD. */
 export function todayET(now = new Date()) {
@@ -275,7 +253,7 @@ export type Dated = {
   date: string;
   time: string;
   title: string;
-  mode: Mode;
+  mode?: Mode;
   where: string;
   blurb: string;
   href?: string;
