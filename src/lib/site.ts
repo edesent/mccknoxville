@@ -123,7 +123,7 @@ export const staff = [
   {
     name: "Rev. Colleen Darraugh",
     role: "Lead Pastor",
-    photo: "/photos/colleen-darraugh.jpg",
+    photo: "/photos/2025-colleen.jpeg",
     note: "Office hours by appointment.",
   },
   {
