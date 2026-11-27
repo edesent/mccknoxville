@@ -6,9 +6,12 @@ import { org } from "@/lib/site";
  * The endpoint behind every form: contact, prayer requests and "save us a
  * seat" visits.
  *
- * Messages go to FORM_WEBHOOK_URL — a Slack (or Teams) incoming webhook — so
- * they reach the pastor's phone in seconds. Until that is set the endpoint
- * answers 503 and the form honestly tells people to call the church.
+ * Messages are emailed through Resend (RESEND_API_KEY) from forms@dfd.llc.
+ * Contact and visit messages go to the church office and the pastor; prayer
+ * requests go to the pastor only, since many are private. FORM_TO overrides
+ * the recipients (comma-separated). FORM_WEBHOOK_URL, if set, also posts each
+ * message to a Slack or Teams channel. With neither set the endpoint answers
+ * 503 and the form honestly tells people to call the church.
  *
  * Spam defences: a signed load-time token (GET) that must be at least 3
  * seconds old, a honeypot field, a per-IP rate limit, and a rule that
@@ -19,7 +22,44 @@ import { org } from "@/lib/site";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SECRET = process.env.FORM_SECRET || process.env.FORM_WEBHOOK_URL || "";
+const SECRET = process.env.FORM_SECRET || process.env.RESEND_API_KEY || process.env.FORM_WEBHOOK_URL || "";
+
+const OFFICE = "Office@mccknoxville.org";
+const PASTOR = "Pastor@mccknoxville.org";
+const FROM = process.env.FORM_FROM || `${org.name} website <forms@dfd.llc>`;
+
+function recipients(kind: unknown) {
+  const override = (process.env.FORM_TO || "").split(",").map((x) => x.trim()).filter(Boolean);
+  if (override.length) return override;
+  return kind === "prayer" ? [PASTOR] : [OFFICE, PASTOR];
+}
+
+const esc = (x: string) => x.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+async function sendEmail(kind: unknown, text: string, replyTo?: string) {
+  const [first, ...rest] = text.split("\n");
+  const subject = first.replace(/\*/g, "");
+  const html =
+    `<div style="font:16px/1.55 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1d1442">` +
+    `<h2 style="margin:0 0 14px;font-size:20px">${esc(subject)}</h2>` +
+    rest
+      .map((l) => (l ? `<p style="margin:0 0 6px">${esc(l).replace(/\*(.+?)\*/g, "<strong>$1</strong>")}</p>` : `<br>`))
+      .join("") +
+    `<p style="margin:22px 0 0;font-size:13px;color:#5d5580">Sent from the form on the ${esc(org.name)} website.</p></div>`;
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: FROM,
+      to: recipients(kind),
+      subject,
+      html,
+      text: text.replace(/\*/g, ""),
+      ...(replyTo ? { reply_to: replyTo } : {}),
+    }),
+  });
+  if (!res.ok) throw new Error(`resend ${res.status}`);
+}
 const MIN_FILL_MS = 3000;
 const MAX_AGE_MS = 1000 * 60 * 60 * 6;
 
@@ -171,7 +211,8 @@ export async function POST(request: Request) {
   if ("error" in built) return NextResponse.json({ error: built.error }, { status: 400 });
 
   const webhook = process.env.FORM_WEBHOOK_URL;
-  if (!webhook) {
+  const canEmail = !!process.env.RESEND_API_KEY;
+  if (!webhook && !canEmail) {
     return NextResponse.json(
       {
         error:
@@ -181,14 +222,27 @@ export async function POST(request: Request) {
     );
   }
 
-  try {
-    const res = await fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: built.text }),
-    });
-    if (!res.ok) throw new Error(String(res.status));
-  } catch {
+  // If they left an email address, replying to the message reaches them.
+  const contact = clean(body.contact, 120);
+  const replyTo = /^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/.test(contact) ? contact : undefined;
+
+  const jobs: Promise<void>[] = [];
+  if (canEmail) jobs.push(sendEmail(body.kind, built.text, replyTo));
+  if (webhook) {
+    jobs.push(
+      fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: built.text }),
+      }).then((res) => {
+        if (!res.ok) throw new Error(`webhook ${res.status}`);
+      }),
+    );
+  }
+  const results = await Promise.allSettled(jobs);
+  for (const r of results) if (r.status === "rejected") console.error("form delivery failed:", r.reason);
+  // Delivered if it reached at least one place.
+  if (results.every((r) => r.status === "rejected")) {
     return NextResponse.json(
       { error: "We couldn’t send that just now. Please call the church office instead." },
       { status: 502 },

@@ -81,10 +81,11 @@ new Sunday's ID to the top.
 ## Forms
 
 Contact, Prayer request and "Let us know you're coming" post to `/api/form`, which
-forwards each one to **`FORM_WEBHOOK_URL`** (a Slack incoming webhook). Until that env
-var is set in Vercel, the forms answer 503 and tell visitors to call the church. You
-can also set `FORM_SECRET` for the anti-spam token. Prayer requests are marked
-"pastoral team only" unless the person ticks "share in the weekly email".
+emails each one through Resend (`RESEND_API_KEY`, the shared DFD key) from
+`forms@dfd.llc`. Contact and visit messages go to Office@ and Pastor@mccknoxville.org;
+prayer requests go to Pastor@ only. Set `FORM_TO` (comma-separated) to change who
+receives them, and `FORM_WEBHOOK_URL` to also post them to Slack or Teams. Prayer
+requests are marked "pastoral team only" unless the person ticks "share in the weekly email".
 
 ## Going live
 
