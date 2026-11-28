@@ -220,10 +220,10 @@ export default function Home() {
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
             <a href={table.href} className="group relative overflow-hidden rounded-[2rem] bg-night text-white" data-reveal>
               <Image
-                src="/photos/place-at-the-table.jpg"
-                alt="Two volunteers beside the A Place at the Table trailer"
-                width={1800}
-                height={1013}
+                src="/photos/ready-to-serve-1.png"
+                alt="Volunteers with trays of hot food ready to serve, making sandwiches for hungry neighbors, and rows of grocery bags ready to go out"
+                width={1200}
+                height={630}
                 className="h-full min-h-[24rem] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                 sizes="(min-width: 1024px) 58vw, 100vw"
               />
