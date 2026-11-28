@@ -302,7 +302,7 @@ export const ministries = [
     id: "pantry",
     name: "Michael T. Irwin Food Pantry",
     kicker: "Food baskets for anyone who’s hungry",
-    body: "Named for Mike Irwin, a member for most of his adult life who died in 2006. The pantry assembles food boxes for hungry neighbors inside the LGBTQ community and across Knox County. That’s 218 boxes feeding 292 adults and 182 children at last count, and every Thanksgiving and Christmas it fills holiday baskets. Alongside it, our Benevolence Fund helps families with rent, utilities and car repairs.",
+    body: "Named for Mike Irwin, a member for most of his adult life who died in 2006. The pantry assembles food boxes for hungry neighbors inside the LGBTQ community and across Knox County. So far this year we have served 1823 adults and 376 children, and every Thanksgiving and Christmas it fills holiday baskets. Alongside it, our Benevolence Fund helps families with rent, utilities and car repairs.",
     how: "Bring groceries on the third Sunday of each month, or use the marked envelopes at the back of the sanctuary.",
     list: [
       "8.5 oz corn bread or muffin mix",
