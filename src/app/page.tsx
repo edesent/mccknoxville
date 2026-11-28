@@ -230,6 +230,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-night to-transparent" />
               </div>
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-night via-night/60 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
                 <p className="display text-[clamp(4rem,9vw,7rem)] text-r3">100+</p>
                 <p className="mt-1 text-2xl font-extrabold">hot meals, every Monday night</p>
