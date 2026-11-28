@@ -218,17 +218,19 @@ export default function Home() {
             <h2 className="display mt-4 text-[clamp(2.4rem,5.5vw,4.6rem)]">Love you can eat.</h2>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-            <a href={table.href} className="group relative overflow-hidden rounded-[2rem] bg-night text-white" data-reveal>
-              <Image
-                src="/photos/ready-to-serve-1.png"
-                alt="Volunteers with trays of hot food ready to serve, making sandwiches for hungry neighbors, and rows of grocery bags ready to go out"
-                width={1200}
-                height={630}
-                className="h-full min-h-[24rem] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                sizes="(min-width: 1024px) 58vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
+            <a href={table.href} className="group flex flex-col overflow-hidden rounded-[2rem] bg-night text-white" data-reveal>
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/photos/ready-to-serve-1.png"
+                  alt="Volunteers with trays of hot food ready to serve, making sandwiches for hungry neighbors, and rows of grocery bags ready to go out"
+                  width={1200}
+                  height={630}
+                  className="h-auto w-full transition duration-700 group-hover:scale-[1.03]"
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-night via-night/70 to-transparent" />
+              </div>
+              <div className="mt-auto p-7 pt-3 sm:p-10 sm:pt-4">
                 <p className="display text-[clamp(4rem,9vw,7rem)] text-r3">100+</p>
                 <p className="mt-1 text-2xl font-extrabold">hot meals, every Monday night</p>
                 <p className="mt-2 max-w-lg text-white/80">
