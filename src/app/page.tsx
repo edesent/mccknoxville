@@ -238,7 +238,7 @@ export default function Home() {
             </a>
             <div className="grid gap-6">
               <div className="card p-8" data-reveal style={{ ["--d" as string]: "100ms" }}>
-                <p className="display text-6xl text-r4">474</p>
+                <p className="display text-6xl text-r4">2,199</p>
                 <p className="mt-2 text-lg font-bold">neighbors fed by our food pantry at last count</p>
                 <p className="mt-2 text-ink/70">
                   292 adults and 182 children, in memory of Mike Irwin. Bring groceries the third Sunday of the month.
