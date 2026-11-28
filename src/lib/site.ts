@@ -315,8 +315,7 @@ export const ministries = [
     id: "music",
     name: "Music Ministry",
     kicker: "Everyone’s in it",
-    body: "Whether you sing in the choir, play an instrument, sing from the hymnal or just listen well, you’re part of the music here. The choir leads worship most of the year (we take summers off) and sings for Christmas, Easter and special days. We need cantors, soloists, and instrumentalists for a worship band we’re building: guitars, keys, drums, winds and strings.",
-    how: "Choir rehearses Wednesdays at 6:30 PM and Sundays at 10:00 AM during the school year.",
+    body: "Whether you sing in a choir, play an instrument, sing in the congregation or just listen well, you’re part of the music here. Currently, we are without a pianist or music director. We are looking. Are you or someone you know a pianist? For now, we sing with music videos. We love all styles of music and sing contemporary Christian songs, traditional hymns, gospel, and some crossover pop songs. We are blessed with some talented soloists who offer music ministry. We welcome your musical gifts.",
   },
   {
     id: "children",
