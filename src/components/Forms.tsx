@@ -144,7 +144,7 @@ const topics = [
   "Just saying hello",
   "Pastoral care",
   "Membership",
-  "Children’s ministry",
+  "Youth ministry",
   "Music ministry",
   "Food Pantry",
   "Something for the calendar",
