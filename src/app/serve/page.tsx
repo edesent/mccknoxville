@@ -7,7 +7,7 @@ import { ministries } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Serve",
   description:
-    "A Place at the Table, the Michael T. Irwin Food Pantry, music and children’s ministry at MCC Knoxville.",
+    "A Place at the Table, the Michael T. Irwin Food Pantry, music and youth ministry at MCC Knoxville.",
   alternates: { canonical: "/serve" },
 };
 
