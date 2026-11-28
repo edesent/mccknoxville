@@ -320,7 +320,7 @@ export const ministries = [
   },
   {
     id: "children",
-    name: "Children’s Ministry",
+    name: "Youth Ministry",
     kicker: "Preschool to Middle School ages",
     body: "Our Youth Ministry meets the third Sunday of each month. On the other Sundays, the kids have an activities table at the back and a Youth Ministry moment in the service. We’re always looking for lesson leaders and helpers, about one Sunday a month.",
     how: "Write “children” in the volunteer blank on your generosity card, or send us a note.",
