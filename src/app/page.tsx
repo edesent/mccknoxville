@@ -241,7 +241,7 @@ export default function Home() {
                 <p className="display text-6xl text-r4">2,199</p>
                 <p className="mt-2 text-lg font-bold">neighbors fed by our food pantry so far this year</p>
                 <p className="mt-2 text-ink/70">
-                  We have served 1823 adults and 376 children so far this year. Bring groceries the third Sunday of the month.
+                  We have served 1823 adults and 376 children so far this year, in memory of Mike Irwin. Bring groceries the third Sunday of the month.
                 </p>
               </div>
               <div className="card p-8" data-reveal style={{ ["--d" as string]: "200ms" }}>
