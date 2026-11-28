@@ -30,7 +30,7 @@ const expect = [
   },
   {
     t: "Kids are welcome",
-    d: "Children 2 to 12 have their own lesson with our Children’s Ministry volunteers.",
+    d: "Our Youth Ministry for babies to middle school kids meets the third Sunday of each month. On the other Sundays, the kids have an activities table at the back and a Youth Ministry moment in the service.",
     c: "bg-r4",
   },
 ];
