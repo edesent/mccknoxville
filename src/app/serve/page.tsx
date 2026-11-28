@@ -75,7 +75,7 @@ export default function ServePage() {
                     </ul>
                   </div>
                 )}
-                <p className="mt-5 font-bold">{m.how}</p>
+                {m.how && <p className="mt-5 font-bold">{m.how}</p>}
               </div>
             </article>
           ))}
