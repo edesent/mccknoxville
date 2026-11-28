@@ -186,7 +186,7 @@ export const weekly = [
     title: "Lunch ’n Learn",
     mode: "In person" as Mode,
     where: "The Annex, behind the sanctuary",
-    blurb: "Bring a Bible and your lunch or snack. Currently we are studying aspects of the Christmas story with insights from The First Advent in Palestine.",
+    blurb: "Bring a Bible and your lunch or snack. Currently we are studying aspects of the Christmas story with insights from The First Advent in Palestine. For the month of December, there is an additional group that will meet on Zoom on Wednesdays at 6pm!",
   },
 ];
 
