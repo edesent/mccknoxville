@@ -15,7 +15,7 @@ export default function GivePage() {
       <PageHead
         kicker="Give"
         title="Giving is a blessing both ways."
-        lede="Your gifts keep a safe, affirming church open for the LGBTQ+ and ally communities of Knoxville and East Tennessee, and keep the pantry stocked."
+        lede="Your gifts keep a safe, affirming church open for the LGBTQ+ and ally communities of Knoxville and East Tennessee, and keep us serving community needs."
       />
 
       <section className="py-20 sm:py-28">
