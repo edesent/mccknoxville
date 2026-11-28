@@ -106,7 +106,7 @@ export const ways = [
     id: "phone",
     name: "By phone",
     short: "Phone",
-    how: "No computer needed. Register for Zoom and the email includes dial-in numbers, or call the church office and someone will get you the number, meeting ID and passcode.",
+    how: "No computer needed. Register for Zoom and the email includes dial-in numbers, or call the church office and someone will get you the number, meeting ID and passcode, but please call a few days ahead of Sunday.",
     cta: { label: "Ask the office", href: "/contact" },
   },
 ] as const;
