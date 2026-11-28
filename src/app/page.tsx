@@ -228,7 +228,7 @@ export default function Home() {
                   className="h-auto w-full transition duration-700 group-hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 58vw, 100vw"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-night via-night/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-night to-transparent" />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
                 <p className="display text-[clamp(4rem,9vw,7rem)] text-r3">100+</p>
