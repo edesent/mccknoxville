@@ -247,7 +247,7 @@ export default function Home() {
               <div className="card p-8" data-reveal style={{ ["--d" as string]: "200ms" }}>
                 <p className="kicker text-muted">Also</p>
                 <p className="mt-2 text-lg font-bold">Choir, cantors & a worship band in the making</p>
-                <p className="mt-2 text-lg font-bold">Children’s ministry, preschool to middle school ages</p>
+                <p className="mt-2 text-lg font-bold">Youth ministry, preschool to middle school ages</p>
                 <Link href="/serve" className="btn btn-line mt-6">
                   Find your place to serve
                 </Link>
