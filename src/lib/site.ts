@@ -177,7 +177,7 @@ export const weekly = [
     title: "Touchstone Group",
     mode: "Online" as Mode,
     where: "Zoom",
-    blurb: "Now studying “Songs of Resistance”: songs in Scripture sung as socio-political resistance.",
+    blurb: "Now studying the Christmas story alongside the Revelations of the Magi.",
     href: "https://us02web.zoom.us/j/8644385469?pwd=S3VHY0xOcnFXUlFEZUx2ek11TGtvZz09",
   },
   {
