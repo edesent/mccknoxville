@@ -63,7 +63,7 @@ export default function AboutPage() {
             <p>
               The Metropolitan Community Churches began in 1968, when Rev. Troy Perry, a Pentecostal preacher put out
               of his pulpit for being gay, held a worship service for twelve people in his living room in Southern
-              California. Gay and straight sat side by side. MCC has been building churches like that ever since, and
+              California. Gay and straight, black and white sat side by side. MCC has been building churches like that ever since, and
               today it is a worldwide denomination.
             </p>
             <p>
